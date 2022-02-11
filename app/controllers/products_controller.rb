@@ -2,15 +2,20 @@ class ProductsController < ApplicationController
   before_action :set_products, only: [:show, :update, :destroy]
 
   def index
-    @product = Product.all.sort_by(&:category_id)
+    @product = Product.all
     render json: @product
   end
 
   def search
-    @product = Product.where("name LIKE ?", "%#{params[:name]}%")
+    @product = Product.search(params[:name])
     render json: @product
   end
   
+  def filter_by_category
+    @product = Product.order_by_category(params[:category_id])
+    render json: @product
+  end
+
   def show
     render json: @product
   end
