@@ -15,15 +15,18 @@
 # gem 'pg'
 #
 default: &default
-  adapter: postgresql
-  encoding: unicode
+  adapter: mysql2
+  encoding: utf8
+  host: mdb-test.c6vunyturrl6.us-west-1.rds.amazonaws.com
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
-  database: api_product_development
+  database: bsale_test
+  username: <%= ENV['API_PRODUCT_DATABASE_USERNAME'] %>
+  password: <%= ENV['API_PRODUCT_DATABASE_PASSWORD'] %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -81,6 +84,6 @@ test:
 #
 production:
   <<: *default
-  database: api_product_production
-  username: api_product
+  database: bsale_test
+  username: <%= ENV['API_PRODUCT_DATABASE_USERNAME'] %>
   password: <%= ENV['API_PRODUCT_DATABASE_PASSWORD'] %>
