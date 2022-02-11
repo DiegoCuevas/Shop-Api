@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   resources :categories
   resources :products
   get 'search', to: 'products#search'
+  get 'order_by_category', to: 'products#filter_by_category'
 end
