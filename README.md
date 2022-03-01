@@ -4,10 +4,10 @@ El ejercicio consiste en la creación de un backend con una API de consulta a la
 
 ## Descripcion
 
-La API contiene diferentes endpoints que sirven para consumir la data dependiendo de la búsqueda que se haga desde el Frontend. < /br>
+La API contiene diferentes endpoints que sirven para consumir la data dependiendo de la búsqueda que se haga desde el Frontend. <br/>
 La tabla products tiene un CRUD completo y los siguientes endpoints:
-- ```products/search?name=<name>```: Retorna una lista de productos que coincidan con el nombre. < /br>
-- ```products/order_by_category?category=<category>```: Retorna una lista de productos ordenados por categoría. < /br>
+- ```products/search?name=<name>```: Retorna una lista de productos que coincidan con el nombre. <br/>
+- ```products/order_by_category?category=<category>```: Retorna una lista de productos ordenados por categoría. <br/>
 
 La tabla categories solo tiene un CRUD completo.
 
